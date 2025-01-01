@@ -1,0 +1,22 @@
+# API Test Automation with RestAssured
+
+This project demonstrates API automation testing using **RestAssured** for testing RESTful services. In this example, we are fetching random cat facts through a public API and validating the response.
+
+## Project Setup
+
+### Prerequisites
+Before running the tests, ensure you have the following installed:
+- Java 8 or higher
+- Maven
+- IDE (IntelliJ IDEA, Eclipse, etc.)
+
+## Getting Started
+
+### 1. Clone the Repository
+Clone the repository to your local machine using Git:
+git clone https://github.com/your-username/api-test-automation.git
+
+2. Run the Tests
+
+3. View Test Reports
+TestNG generates a detailed HTML report located in the /test-output directory after the tests are complete.
