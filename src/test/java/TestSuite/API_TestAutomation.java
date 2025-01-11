@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import java.io.FileInputStream;
+import java.util.Collections;
 import java.util.Properties;
 import static org.hamcrest.Matchers.*;
 
@@ -41,11 +42,12 @@ public class API_TestAutomation {
         RestAssured.baseURI = properties.getProperty("catFactURL");
 
         // Send a GET request to the API with query parameters for animal type and number of facts
-        Response response = RestAssured.given()
+        Response response;  // Request random facts
+        response = RestAssured.given()
                 .queryParam("animal_type", properties.getProperty("animalType"))  // Set animal type
-                .queryParam("amount", Integer.parseInt(properties.getProperty("numberOfFacts")))  // Set the number of facts
+                .queryParam("amount", Collections.singleton(Integer.parseInt(properties.getProperty("numberOfFacts"))))  // Set the number of facts
                 .when()
-                .get("/facts/random");  // Request random facts
+                .get("/facts/random");
 
         // Log the API response body in the TestNG report for visibility
         Reporter.log("API Response Body: " + response.asString(), true);
